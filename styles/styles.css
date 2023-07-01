@@ -1,0 +1,311 @@
+
+:root {
+    /* Spacings */
+    --spacing-4: .25rem;
+    --spacing-8: .5rem;
+    --spacing-12: .75rem;
+    --spacing-16: 1rem;
+    --spacing-24: 1.5rem;
+    --spacing-32: 2rem;
+
+    /* Colors */
+    --color-white:              rgb(255, 255, 255);
+    --color-black:              rgb(0, 0, 0);
+    --color-black-opacity-50:   rgba(0,0,0,0.5);
+    --color-red:                rgb(222, 35, 51); 
+
+    /* Fonts */
+    --font-family: Arial, sans-serif;
+
+    --font-weight-bold: 700;
+    --font-weight-normal: 400;
+
+    --font-h1:          var(--font-weight-bold)     1.8rem/1.5 var(--font-family);
+    --font-h2:          var(--font-weight-bold)     1.5rem/1.5 var(--font-family);
+    --font-h3:          var(--font-weight-bold)     1.2rem/1.5 var(--font-family);
+    --font-body:        var(--font-weight-normal)   1rem/1.5 var(--font-family);
+    --font-body-small:  var(--font-weight-normal)   .85rem/1.5 var(--font-family);
+
+    /* Zindex */
+    --zindex-header: 100;
+
+    /* Sizings */
+    --max-width-desktop: 50rem;
+
+    /* Elevations */
+    --elevation-1: 0rem .75rem 1.25rem -1.5rem var(--color-black-opacity-50);
+
+    /* Breakpoints */
+    /* Los breakpoints no se pueden usar como custom properties variables */
+    /* break-small:       30rem; */
+    /* break-medium:      48rem; */
+    /* break-large:       62rem; */
+    /* break-extra-large: 75rem; */
+}
+
+/* Custom Reset */
+
+* {
+    color: var(--color-black);
+    font: var(--font-body);
+}
+
+/* Header Layout */
+
+.header {
+    padding: var(--spacing-16);
+    background-color: var(--color-white);
+    position: sticky;
+    top: 0;
+    z-index: var(--zindex-header);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 62rem) { 
+    .header {
+        display: grid;
+        grid-template-columns: var(--max-width-desktop);
+        justify-content: center;
+    }
+}
+
+.header--with-bottom-shadow {
+    box-shadow: var(--elevation-1);
+}
+
+.header__logo {
+    font: var(--font-h1);
+    letter-spacing: -0.15rem;
+}
+
+.header__logo:hover {
+    color: rgba(0,0,0,0.5);
+}
+
+.header__nav {
+    text-align: center;
+    font-weight: var(--font-weight-bold);
+}
+
+@media (min-width: 62rem) { 
+    .header__nav{
+        max-width: var(--max-width-desktop);
+        display: flex;
+        gap: var(--spacing-16);
+    }
+}
+
+.header__link {
+    font-size: .7rem;
+}
+
+.header__link:hover {
+    color: var(--color-black-opacity-50);
+}
+
+/* Main Layout */
+
+main {
+    padding-bottom: var(--spacing-24);
+    padding-left: var(--spacing-24);
+    padding-right: var(--spacing-24);
+}
+
+@media (min-width: 62rem) { 
+    main {
+        display: grid;
+        grid-template-columns: var(--max-width-desktop);
+        justify-content: center;
+    }
+}
+
+/*  Cover Section */
+
+.cover-header {
+    width: 100%;
+    background-image: url(../img/bg-hero-home-m.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 9.375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-24);
+    padding: var(--spacing-12);
+}
+
+@media (min-width: 48rem) {
+    .cover-header {
+        height: 12.5rem;
+    }
+}
+
+.cover-header__h1 {
+    font: var(--font-h1);
+    text-align: center;
+    color: var(--color-white);
+}
+
+@media (min-width: 48rem) {
+    .background-header__h1 {
+        font: var(--font-h1);
+        max-width: 25rem;
+    }
+}
+
+/* IA Dia Section */
+
+.ia-dia {
+    margin-bottom: var(--spacing-32);
+}
+
+.ia-dia__h2 {
+    font: var(--font-h2);
+    text-align: center;
+    margin-bottom: var(--spacing-24);
+}
+
+.ia-dia__p {
+    margin-bottom: var(--spacing-24);
+    text-align: center;
+}
+
+.ia-dia__p:last-child {
+    margin-bottom: 0;
+}
+
+.ia-dia__p--bold {
+    font-weight: var(--font-weight-bold);
+}
+
+/*   Al Dia Section  */
+
+.al-dia__h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-24);
+}
+
+.al-dia__cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-32);
+}
+
+@media (min-width: 21rem) {
+    .al-dia__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+        justify-content: center;       
+    }
+}
+
+/* Footer Layout */
+
+.footer {
+    background-color: var(--color-black);
+    padding: var(--spacing-24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-12);
+}
+
+@media (min-width: 62rem) { 
+    .footer {
+        display: grid;
+        grid-template-columns: var(--max-width-desktop);
+        justify-content: center;
+    }
+}
+
+.footer * {
+    color: var(--color-white);
+    font: var(--font-body-small);
+}
+
+.footer__nav-internal {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    text-align: center;
+}
+
+@media (min-width: 62rem) {
+    .footer__nav-internal {
+        flex-direction: row; 
+        gap: var(--spacing-12);
+    }
+}
+
+.footer__nav-internal--link:hover{
+    color: var(--color-red);
+}
+
+.footer__nav-social {
+    display: flex;
+    gap: var(--spacing-8);
+}
+
+.footer__rights {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    text-align: center;
+}
+
+@media (min-width: 62rem) {
+    .footer__rights {
+        text-align: left;
+    }
+}
+
+/* Icon Component */
+
+.icon {
+    width: 1.5rem;
+    min-width: 1.5rem;
+    height: 1.5rem;
+}
+
+.icon:hover{
+    opacity: 0.7;
+}
+
+/* Card Component */
+
+.card__figure {
+    margin-bottom: var(--spacing-12);
+}
+
+.card__img {
+    margin-bottom: var(--spacing-12);
+}
+
+.card__figcaption {
+    font: var(--font-body-small);
+}
+
+.card__a-h3 {
+    font: var(--font-h3);
+    color: var(--color-red);
+    margin-bottom: var(--spacing-12);
+}
+
+.card__a-h3:hover{
+    color: var(--color-black);
+}
+
+.card__p {
+    margin-bottom: var(--spacing-12);
+}
+
+.card__a {
+    font: var(--font-body-small);
+    color: var(--color-red);
+}
+
+.card__a:hover{
+    color: var(--color-black);
+}
