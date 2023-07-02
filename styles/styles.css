@@ -240,7 +240,7 @@ main {
     }
 }
 
-.footer__nav-internal--link:hover{
+.footer__link--text:hover{
     color: var(--color-red);
 }
 
