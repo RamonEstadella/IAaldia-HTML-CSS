@@ -183,6 +183,7 @@ main {
 /*   Al Dia Section  */
 
 .al-dia__h2 {
+    font: var(--font-h2);
     text-align: center;
     margin-bottom: var(--spacing-24);
 }
