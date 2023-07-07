@@ -276,7 +276,7 @@ main {
 
 /* Card Component */
 
-.card__figure {
+.card__cover {
     margin-bottom: var(--spacing-12);
 }
 
@@ -284,7 +284,7 @@ main {
     margin-bottom: var(--spacing-12);
 }
 
-.card__figcaption {
+.card__caption {
     font: var(--font-body-small);
 }
 
